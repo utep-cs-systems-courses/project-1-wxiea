@@ -64,16 +64,20 @@ char word_start(char *str)
 
 	{
 
-	  return str[index];
+	  if (str[index] != ' ')
+
+	    {
+
+	      return str[index];
+
+	    }
 
 	}
 
+      index++;
+
     }
-
-  index++;
-
-}
-return '\0';
+  return '\0';
 }
 
 /* Returns a pointer terminator char following *word */
@@ -301,6 +305,7 @@ void print_tokens(char** tokens)
     }
   free(tokens);
 }
+
 /* Frees all tokens and the vector containing themx. */
 void free_tokens(char** tokens)
 {
