@@ -1,11 +1,24 @@
-var=tester.o history.o tokenizer.o
+CC := gcc
+LD := gcc
 
-tester:$(var)
+CFLAGS := -c
+LDFLAGS := -lc
 
-	gcc -o tester $(var)
+all: History
 
-tester.o:tester.c
+install: History
 
-history.o:history.c
+clean:
+	del *.o
 
-tokenizer.o:tokenizer.c
+History: History.o \
+		  Tokenizer.o \
+         Tester.o
+	$(LD) $(LDFLAGS) $^ -o $@
+
+Tester.o:tester.c
+	$(CC) $(CFLAGS) -o $@ $<
+History.o:history.c
+	$(CC) $(CFLAGS) -o $@ $<
+Tokenizer.o:tokenizer.c
+	$(CC) $(CFLAGS) -o $@ $<
