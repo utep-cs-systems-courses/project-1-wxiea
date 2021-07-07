@@ -20,6 +20,7 @@ int tests_run;
 
 
 /* Tokenizer test cases */
+/*
 static char *test_string_length() {
     mu_assert("string_length('happy') == 5", string_length("happy") == 5);
     return 0;
@@ -42,7 +43,7 @@ static char *test_find_word_terminator() {
     mu_assert("find_word_terminator(emptyStr) == empty", find_word_terminator(empty) == empty);
     return 0;
 }
-
+*/
 static char *test_count_words() {
     char *str = "happy happy joy joy";
     mu_assert("count_words('happy happy joy joy') == 4", count_words(str) == 4);
@@ -80,10 +81,10 @@ static char *test_get_history() {
 
 static char *all_tests() {
     if (TEST_TOKENIZER) {
-        mu_run_test(test_string_length);
-        mu_run_test(test_is_valid_character);
-        mu_run_test(test_find_word_start);
-        mu_run_test(test_find_word_terminator);
+      // mu_run_test(test_string_length);
+      //mu_run_test(test_is_valid_character);
+      //mu_run_test(test_find_word_start);
+      //mu_run_test(test_find_word_terminator);
         mu_run_test(test_count_words);
         mu_run_test(test_tokenize);
     }
